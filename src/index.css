@@ -140,7 +140,7 @@ img {
 .settings {
     width: 40px;
     height: 40px;
-    background: url(/images/settings.png) center no-repeat;
+    background: url(https://tiermaker.com/images/chart/chart/settings.png) center no-repeat;
     cursor: pointer;
     display: inline-block;
 }
@@ -157,14 +157,14 @@ img {
     height: 40px;
     width: 40px;
     cursor: pointer;
-    background: url(/images/arrow_up.png);
+    background: url(	https://tiermaker.com/images/chart/chart/arrowup.png);
 }
 
 .move_down {
     height: 40px;
     width: 40px;
     cursor: pointer;
-    background: url(/images/arrow_down.png);
+    background: url(	https://tiermaker.com/images/chart/chart/arrowdown.png);
 }
 
 #char-tier-container {
