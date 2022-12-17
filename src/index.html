@@ -9,95 +9,89 @@
           content="TierListMaker allows you to create a tier list for anything in seconds. Quickly use an existing tier list template or upload images to create your own template.">
     <title>Tier List Maker for Everything - TierMaker</title>
     <link href="https://fonts.cdnfonts.com/css/arial" rel="stylesheet">
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="style/index.css">
+    <link rel="stylesheet" href="style/overlay.css">
     <title>TierListMaker</title>
+    <script src="scripts/header_loader.js" defer></script>
+    <script src="scripts/footer_loader.js" defer></script>
+    <script src="scripts/timer.js" defer></script>
+    <script src="scripts/active_menu.js" defer></script>
+    <script src="scripts/show_overlay.js" defer></script>
+    <script src="scripts/hide_overlay.js" defer></script>
+    <script src="scripts/change_color.js" defer></script>
+    <script src="scripts/swapper.js" defer></script>
+    <script src="scripts/row_modifier.js" defer></script>
+    <script src="scripts/create_row.js" defer></script>
 </head>
-<body>
+<body id="body">
 <div id="outer_container">
-    <div id="header_container">
-        <div id="header">
-            <a id="logo" title="TierListMaker">
-                <img src="	https://tiermaker.com/images/tiermaker-logo.png" alt="">
-            </a>
-            <nav id="nav">
-                <ul>
-                    <li>
-                        <button id="create">Create TierList</button>
-                    </li>
-                    <li>
-                        <button id="login">Login</button>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-    </div>
     <div id="content_container">
         <h1 id="tier_list_name">
             Some random TierList name
         </h1>
-        <div id="tier_container">
-            <div class="tier_row">
-                <div class="label_holder" style="background-color: rgb(255, 127, 127);" contenteditable="true">
+        <div id="tier-container">
+            <div class="tier-row" data-id="1">
+                <div class="label-holder" style="background-color: rgb(255, 127, 127);" contenteditable="true">
                     <span class="label">S</span>
                 </div>
-                <div class="tier_sort"></div>
-                <div class="settings_control">
+                <div class="tier-sort"></div>
+                <div class="settings-control">
                     <div class="settings"></div>
-                    <div class="move_buttons">
-                        <div class="move_up"></div>
-                        <div class="move_down"></div>
+                    <div class="move-buttons">
+                        <div class="move-up"></div>
+                        <div class="move-down"></div>
                     </div>
                 </div>
             </div>
-            <div class="tier_row">
-                <div class="label_holder" style="background-color: rgb(255, 191, 127);" contenteditable="true">
+            <div class="tier-row" data-id="2">
+                <div class="label-holder" style="background-color: rgb(255, 191, 127);" contenteditable="true">
                     <span class="label">A</span>
                 </div>
-                <div class="tier_sort"></div>
-                <div class="settings_control">
+                <div class="tier-sort"></div>
+                <div class="settings-control">
                     <div class="settings"></div>
-                    <div class="move_buttons">
-                        <div class="move_up"></div>
-                        <div class="move_down"></div>
+                    <div class="move-buttons">
+                        <div class="move-up"></div>
+                        <div class="move-down"></div>
                     </div>
                 </div>
             </div>
-            <div class="tier_row">
-                <div class="label_holder" style="background-color: rgb(255, 223, 127);" contenteditable="true">
+            <div class="tier-row" data-id="3">
+                <div class="label-holder" style="background-color: rgb(255, 223, 127);" contenteditable="true">
                     <span class="label">B</span>
                 </div>
-                <div class="tier_sort"></div>
-                <div class="settings_control">
+                <div class="tier-sort"></div>
+                <div class="settings-control">
                     <div class="settings"></div>
-                    <div class="move_buttons">
-                        <div class="move_up"></div>
-                        <div class="move_down"></div>
+                    <div class="move-buttons">
+                        <div class="move-up"></div>
+                        <div class="move-down"></div>
                     </div>
                 </div>
             </div>
-            <div class="tier_row">
-                <div class="label_holder" style="background-color: rgb(255,255,127)" contenteditable="true">
+            <div class="tier-row" data-id="4">
+                <div class="label-holder" style="background-color: rgb(255,255,127)" contenteditable="true">
                     <span class="label">C</span>
                 </div>
-                <div class="tier_sort"></div>
-                <div class="settings_control">
+                <div class="tier-sort"></div>
+                <div class="settings-control">
                     <div class="settings"></div>
-                    <div class="move_buttons">
-                        <div class="move_up"></div>
-                        <div class="move_down"></div>
+                    <div class="move-buttons">
+                        <div class="move-up"></div>
+                        <div class="move-down"></div>
                     </div>
                 </div>
             </div>
-            <div class="tier_row">
-                <div class="label_holder" style="background-color: rgb(191, 255, 127);" contenteditable="true">
+            <div class="tier-row" data-id="5">
+                <div class="label-holder" style="background-color: rgb(191, 255, 127);" contenteditable="true">
                     <span class="label">D</span>
                 </div>
-                <div class="tier_sort"></div>
-                <div class="settings_control">
+                <div class="tier-sort"></div>
+                <div class="settings-control">
                     <div class="settings"></div>
-                    <div class="move_buttons">
-                        <div class="move_up"></div>
-                        <div class="move_down"></div>
+                    <div class="move-buttons">
+                        <div class="move-up"></div>
+                        <div class="move-down"></div>
                     </div>
                 </div>
             </div>
@@ -106,15 +100,56 @@
             <div id="image-carousel" class="sort">
             </div>
         </div>
-        <div id="save_container">
-            <button id="save_button">
+        <div id="add-row">
+            <button id="add_row_button" class="button">
+                Add Row
+            </button>
+        </div>
+        <div id="save-container">
+            <button id="save_button" class="button">
                 Save TierList
             </button>
+        </div>
+    </div>
+    <div id="overlay" style="opacity: 0; visibility: hidden;">
+        <div id="modal-wrapper">
+            <div id="modal" style="display: none;">
+                <span id="close"></span>
+                <h2 style="margin: 0 0 15px 0">Choose a Label Background Color:</h2>
+                <div id="color-select">
+                    <span style="background:#FF7F7F" class="selected"></span>
+                    <span style="background:#FFBF7F" class=""></span>
+                    <span style="background:#FFDF7F" class=""></span>
+                    <span style="background:#FFFF7F" class=""></span>
+                    <span style="background:#BFFF7F" class=""></span>
+                    <span style="background:#7FFF7F" class=""></span>
+                    <span style="background:#7FFFFF" class=""></span>
+                    <span style="background:#7FBFFF" class=""></span>
+                    <span style="background:#7F7FFF" class=""></span>
+                    <span style="background:#FF7FFF" class=""></span>
+                    <span style="background:#BF7FBF" class=""></span>
+                    <span style="background:#3B3B3B" class=""></span>
+                    <span style="background:#858585" class=""></span>
+                    <span style="background:#CFCFCF" class=""></span>
+                    <span style="background:#F7F7F7" class=""></span>
+                </div>
+                <button id="delete-row" class="button">
+                    Delete Row
+                </button>
+                <button id="add-row-above" class="button">
+                    Add a Row Above
+                </button>
+                <button id="add-row-below" class="button">
+                    Add a Row Below
+                </button>
+            </div>
         </div>
     </div>
 </div>
 <div id="other_container">
     <p id="absolute_position">Ты пидор</p>
+</div>
+<div id="timer">
 </div>
 </body>
 </html>

@@ -27,6 +27,19 @@ body, div, ul, li {
     margin: 0 auto;
 }
 
+h1 {
+    font-size: 40px;
+    display: block;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+    font-weight: bold;
+    line-height: 45px;
+    color: #000;
+    margin-bottom: 20px;
+}
+
 #logo {
     width: 200px;
     height: 37px;
@@ -64,20 +77,22 @@ img {
     font-size: 16px;
 }
 
-#nav #create {
+.nav_button {
     border-radius: 8px;
+    text-decoration: none;
     background: #3a5795;
     color: #fff;
     padding: 8px;
     cursor: pointer;
 }
 
-#nav #login {
-    border-radius: 8px;
-    background: #3a5795;
-    color: #fff;
-    padding: 8px;
-    cursor: pointer;
+.nav_button:hover {
+    background-color: darkgray;
+    transition: 0.4ms;
+}
+
+.nav_button:focus {
+    background-color: lightskyblue;
 }
 
 #content_container {
@@ -99,7 +114,7 @@ img {
     justify-content: center;
 }
 
-#tier_container {
+#tier-container {
     display: flex;
     flex-direction: column;
     border-left: solid 1px #000;
@@ -107,7 +122,7 @@ img {
     background: #1a1a17;
 }
 
-.tier_row {
+.tier-row {
     display: flex;
     flex-direction: row;
     min-height: 80px;
@@ -115,7 +130,7 @@ img {
     border-bottom: solid 1px #000;
 }
 
-.label_holder {
+.label-holder {
     width: 100px;
     min-height: 80px;
     border-right: solid 1px #000;
@@ -124,11 +139,11 @@ img {
     justify-content: center;
 }
 
-.tier_sort {
+.tier-sort {
     flex: 1;
 }
 
-.settings_control {
+.settings-control {
     width: 80px;
     display: flex;
     flex-direction: row;
@@ -145,7 +160,7 @@ img {
     display: inline-block;
 }
 
-.move_buttons {
+.move-buttons {
     width: 40px;
     display: flex;
     flex-direction: column;
@@ -153,35 +168,32 @@ img {
     justify-content: center;
 }
 
-.move_up {
+.move-up {
     height: 40px;
     width: 40px;
     cursor: pointer;
-    background: url(	https://tiermaker.com/images/chart/chart/arrowup.png);
+    background: url(https://tiermaker.com/images/chart/chart/arrowup.png);
 }
 
-.move_down {
+.move-down {
     height: 40px;
     width: 40px;
     cursor: pointer;
-    background: url(	https://tiermaker.com/images/chart/chart/arrowdown.png);
+    background: url(https://tiermaker.com/images/chart/chart/arrowdown.png);
 }
 
 #char-tier-container {
     text-align: center;
 }
 
-#save_container {
-    padding: 40px;
+#save-container {
+    padding: 10px;
     text-align: center;
 }
 
-#save_button {
-    border-radius: 8px;
-    background: #3a5795;
-    color: #fff;
-    padding: 8px;
-    cursor: pointer;
+#add-row {
+    padding: 10px;
+    text-align: center;
 }
 
 #other_container {
@@ -193,6 +205,10 @@ img {
 #absolute_position {
     font-size: 5px;
     position: absolute;
+}
+
+#timer {
+    color: transparent;
 }
 
 @media(max-width: 425px) {
