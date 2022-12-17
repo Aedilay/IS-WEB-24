@@ -34,7 +34,7 @@
     width: 16px;
     height: 16px;
     margin: 16px;
-    background: url("/src/image/close.png");
+    background: url(https://tiermaker.com/images/chart/chart/close.png);
     opacity: .5;
     transition: opacity .3s;
     cursor: pointer;
