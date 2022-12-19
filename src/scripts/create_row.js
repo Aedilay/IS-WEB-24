@@ -1,4 +1,4 @@
-function createRow() {
+function createRow(text, color) {
     let row = document.createElement('div');
     let maxDataId = getNodeWithLargestId()
     row.classList.add('tier-row');
@@ -7,10 +7,16 @@ function createRow() {
     let labelHolder = document.createElement('div');
     labelHolder.classList.add('label-holder');
     labelHolder.setAttribute("contenteditable", "true")
-    labelHolder.style.background = generateRandomColor()
+    if (color !== null)
+        labelHolder.style.background = generateRandomColor()
+    else
+        labelHolder.style.background = color
 
     let label = document.createElement('span')
-    label.textContent = "undefined"
+    if (name === '')
+        label.textContent = "aboba"
+    else
+        label.textContent = text
 
     let tierSort = document.createElement('div');
     tierSort.classList.add('tier-sort');

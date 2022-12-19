@@ -2,22 +2,35 @@
     function addRowAbove(rowId) {
         let row = createRow()
         let referenceRow = document.querySelector(`.tier-row[data-id="${rowId}"]`)
-        referenceRow.parentNode.insertBefore(row, referenceRow);
+        let parent = referenceRow.parentNode;
+        parent.insertBefore(row, referenceRow);
+        let container = document.querySelector("#tier-container")
+        localStorage.setItem('container', container.innerHTML)
+
     }
     function addRowBelow(rowId) {
         let row = createRow()
         let referenceRow = document.querySelector(`.tier-row[data-id="${rowId}"]`)
-        referenceRow.parentNode.insertBefore(row, referenceRow.nextElementSibling);
+        let parent = referenceRow.parentNode;
+        parent.insertBefore(row, referenceRow.nextElementSibling);
+        let container = document.querySelector("#tier-container")
+        localStorage.setItem('container', container.innerHTML)
+
     }
     function deleteRow(rowId) {
         let referenceRow = document.querySelector(`.tier-row[data-id="${rowId}"]`)
-        referenceRow.parentNode.removeChild(referenceRow)
+        let parent = referenceRow.parentNode;
+        parent.removeChild(referenceRow);
+        let container = document.querySelector("#tier-container")
+        localStorage.setItem('container', container.innerHTML)
         hideOverlay()
     }
     function addRow() {
         let row = createRow()
         let container = document.querySelector("#tier-container")
         container.appendChild(row)
+        localStorage.setItem('container', container.innerHTML)
+        console.log(localStorage)
     }
 
     let addRowAboveButton = document.querySelector("#add-row-above");
