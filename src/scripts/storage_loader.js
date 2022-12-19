@@ -1,14 +1,13 @@
 (function () {
     if (localStorage.length !== 0) {
-        let container = document.querySelector("#tier-container")
+        let container = document.querySelector("#content_container")
         let parent = container.parentElement
         parent.removeChild(container);
         const html = localStorage.getItem('container');
         const element = document.createElement('div');
-        element.id = 'tier-container'
+        element.id = 'content_container'
         element.innerHTML = html;
-        let charContainer = document.querySelector("#char-tier-container")
-        parent.insertBefore(element, charContainer);
+        parent.appendChild(element);
 
         let settings = element.querySelectorAll(".settings");
         settings.forEach( it =>

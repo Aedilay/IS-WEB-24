@@ -95,6 +95,24 @@ img {
     background-color: lightskyblue;
 }
 
+.container_button {
+    border-radius: 8px;
+    text-decoration: none;
+    background: #3a5795;
+    color: #fff;
+    padding: 8px;
+    cursor: pointer;
+}
+
+.container_button:hover {
+    background-color: darkgray;
+    transition: 0.4ms;
+}
+
+.container_button:focus {
+    background-color: lightskyblue;
+}
+
 #content_container {
     margin: 0 auto;
     padding: 10px;
@@ -124,10 +142,10 @@ img {
 
 .tier-row {
     display: flex;
-    flex-direction: row;
     min-height: 80px;
     border-top: solid 1px #000;
     border-bottom: solid 1px #000;
+    justify-content: space-between;
 }
 
 .label-holder {
@@ -140,7 +158,11 @@ img {
 }
 
 .tier-sort {
-    flex: 1;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
 .settings-control {
@@ -182,9 +204,28 @@ img {
     background: url(https://tiermaker.com/images/chart/chart/arrowdown.png);
 }
 
-#char-tier-container {
-    text-align: center;
+#object-carousel {
+    margin: 5px auto;
+    text-align: left;
+    flex-wrap: wrap;
 }
+
+.object {
+    margin: 5px 5px;
+    display: flex;
+    justify-content: center;
+    height: 80px;
+    width: 80px;
+    color: white;
+    background-color: gray;
+    text-decoration-color: greenyellow;
+    background-position: center;
+    background-size: cover;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+}
+
 
 #save-container {
     padding: 10px;
@@ -211,8 +252,21 @@ img {
     color: transparent;
 }
 
+#add-component {
+    text-align: center;
+    margin: 10px auto;
+}
+
 @media(max-width: 425px) {
     #nav {
         display: none;
     }
+}
+
+#object-carousel {
+    display: flex;
+}
+
+div {
+    display: block;
 }

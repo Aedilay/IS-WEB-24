@@ -2,7 +2,7 @@ function createRow(text, color) {
     let row = document.createElement('div');
     let maxDataId = getNodeWithLargestId()
     row.classList.add('tier-row');
-    row.setAttribute("data-id", maxDataId + 1)
+    row.setAttribute("data-id",   (Number.parseInt(maxDataId) + 1).toString())
 
     let labelHolder = document.createElement('div');
     labelHolder.classList.add('label-holder');

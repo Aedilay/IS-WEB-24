@@ -22,7 +22,9 @@
     <script src="scripts/swapper.js" defer></script>
     <script src="scripts/row_modifier.js" defer></script>
     <script src="scripts/create_row.js" defer></script>
-    <script src="scripts/storage_loader.js" defer></script>
+    <script src="scripts/add_component.js" defer></script>
+    <script src="scripts/save_tierlist.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dragula/3.7.2/dragula.min.js"></script>
 </head>
 <body id="body">
 <div id="outer_container">
@@ -35,7 +37,12 @@
                 <div class="label-holder" style="background-color: rgb(255, 127, 127);" contenteditable="true">
                     <span class="label">S</span>
                 </div>
-                <div class="tier-sort"></div>
+                <div class="tier-sort">
+                    <div class="object" ondblclick="contentEditable=true;"
+                         onblur="contentEditable=false;" contenteditable="false">
+                        tierAss
+                    </div>
+                </div>
                 <div class="settings-control">
                     <div class="settings"></div>
                     <div class="move-buttons">
@@ -98,58 +105,101 @@
             </div>
         </div>
         <div id="char-tier-container">
-            <div id="image-carousel" class="sort">
-            </div>
-        </div>
-        <div id="add-row">
-            <button id="add_row_button" class="button">
-                Add Row
-            </button>
-        </div>
-        <div id="save-container">
-            <button id="save_button" class="button">
-                Save TierList
-            </button>
-        </div>
-    </div>
-    <div id="overlay" style="opacity: 0; visibility: hidden;">
-        <div id="modal-wrapper">
-            <div id="modal" style="display: none;">
-                <span id="close"></span>
-                <h2 style="margin: 0 0 15px 0">Choose a Label Background Color:</h2>
-                <div id="color-select">
-                    <span style="background:#FF7F7F" class="selected"></span>
-                    <span style="background:#FFBF7F" class=""></span>
-                    <span style="background:#FFDF7F" class=""></span>
-                    <span style="background:#FFFF7F" class=""></span>
-                    <span style="background:#BFFF7F" class=""></span>
-                    <span style="background:#7FFF7F" class=""></span>
-                    <span style="background:#7FFFFF" class=""></span>
-                    <span style="background:#7FBFFF" class=""></span>
-                    <span style="background:#7F7FFF" class=""></span>
-                    <span style="background:#FF7FFF" class=""></span>
-                    <span style="background:#BF7FBF" class=""></span>
-                    <span style="background:#3B3B3B" class=""></span>
-                    <span style="background:#858585" class=""></span>
-                    <span style="background:#CFCFCF" class=""></span>
-                    <span style="background:#F7F7F7" class=""></span>
+            <div id="cont">
+                <div id="object-carousel" class="object-container">
+                    <div id="1" class="object" ondblclick="contentEditable=true;"
+                         onblur="contentEditable=false;" contenteditable="false">
+                        Object Name1
+                    </div>
+                    <div id="2" class="object" ondblclick="contentEditable=true;"
+                         onblur="contentEditable=false;" contenteditable="false">
+                        Object Name2
+                    </div>
+                    <div id="3" class="object" ondblclick="contentEditable=true;"
+                         onblur="contentEditable=false;" contenteditable="false">
+                        Object Name3
+                    </div>
+                    <div id="4" class="object" ondblclick="contentEditable=true;"
+                         onblur="contentEditable=false;" contenteditable="false">
+                        Object Name4
+                    </div>
+                    <div id="5" class="object" ondblclick="contentEditable=true;"
+                         onblur="contentEditable=false;" contenteditable="false">
+                        Object Name5
+                    </div>
+                    <div id="6" class="object" ondblclick="contentEditable=true;"
+                         onblur="contentEditable=false;" contenteditable="false">
+                        Object Name6
+                    </div>
                 </div>
-                <button id="delete-row" class="button">
-                    Delete Row
+            </div>
+            <div id="add-component">
+                <button id="add-component-button" class="container_button">
+                    Add Component
                 </button>
-                <button id="add-row-above" class="button">
-                    Add a Row Above
+                <button id="add-row-button" class="container_button">
+                    Add Row
                 </button>
-                <button id="add-row-below" class="button">
-                    Add a Row Below
+            </div>
+            <div id="save-container">
+                <button id="save-button" class="container_button">
+                    Save TierList
                 </button>
+            </div>
+
+
+            <div id="overlay" style="opacity: 0; visibility: hidden;">
+                <div id="modal-wrapper">
+                    <div id="modal" style="display: none;">
+                        <span id="close"></span>
+                        <h2 style="margin: 0 0 15px 0">Choose a Label Background Color:</h2>
+                        <div id="color-select">
+                            <span style="background:#FF7F7F" class="selected"></span>
+                            <span style="background:#FFBF7F" class=""></span>
+                            <span style="background:#FFDF7F" class=""></span>
+                            <span style="background:#FFFF7F" class=""></span>
+                            <span style="background:#BFFF7F" class=""></span>
+                            <span style="background:#7FFF7F" class=""></span>
+                            <span style="background:#7FFFFF" class=""></span>
+                            <span style="background:#7FBFFF" class=""></span>
+                            <span style="background:#7F7FFF" class=""></span>
+                            <span style="background:#FF7FFF" class=""></span>
+                            <span style="background:#BF7FBF" class=""></span>
+                            <span style="background:#3B3B3B" class=""></span>
+                            <span style="background:#858585" class=""></span>
+                            <span style="background:#CFCFCF" class=""></span>
+                            <span style="background:#F7F7F7" class=""></span>
+                        </div>
+                        <button id="delete-row" class="button">
+                            Delete Row
+                        </button>
+                        <button id="add-row-above" class="button">
+                            Add a Row Above
+                        </button>
+                        <button id="add-row-below" class="button">
+                            Add a Row Below
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+    <script src="scripts/storage_loader.js"></script>
 </div>
 <div id="other_container">
     <p id="absolute_position">Ты пидор</p>
 </div>
 <div id="timer"></div>
+<script defer>
+    const container1 = document.querySelector('#object-carousel');
+    const tiers = document.querySelectorAll(`.tier-sort`)
+    let drake = dragula([]).on('drop', function (el) {
+        saveLocal()
+    })
+    for (let i = 0; i < tiers.length; i++) {
+        drake.containers.push(tiers.item(i))
+    }
+    drake.containers.push(container1)
+</script>
 </body>
 </html>
