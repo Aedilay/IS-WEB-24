@@ -21,9 +21,9 @@
         let referenceRow = document.querySelector(`.tier-row[data-id="${rowId}"]`)
         let parent = referenceRow.parentNode;
         parent.removeChild(referenceRow);
+        hideOverlay()
         let container = document.querySelector("#content_container")
         localStorage.setItem('container', container.innerHTML)
-        hideOverlay()
     }
     function addRow() {
         let row = createRow()

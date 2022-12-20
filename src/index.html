@@ -40,7 +40,7 @@
                 <div class="tier-sort">
                     <div class="object" ondblclick="contentEditable=true;"
                          onblur="contentEditable=false;" contenteditable="false">
-                        tierAss
+                        AssWeCan
                     </div>
                 </div>
                 <div class="settings-control">
@@ -55,7 +55,12 @@
                 <div class="label-holder" style="background-color: rgb(255, 191, 127);" contenteditable="true">
                     <span class="label">A</span>
                 </div>
-                <div class="tier-sort"></div>
+                <div class="tier-sort">
+                    <div class="object" ondblclick="contentEditable=true;"
+                         onblur="contentEditable=false;" contenteditable="false">
+                        AAAAA
+                    </div>
+                </div>
                 <div class="settings-control">
                     <div class="settings"></div>
                     <div class="move-buttons">
@@ -68,7 +73,12 @@
                 <div class="label-holder" style="background-color: rgb(255, 223, 127);" contenteditable="true">
                     <span class="label">B</span>
                 </div>
-                <div class="tier-sort"></div>
+                <div class="tier-sort">
+                    <div class="object" ondblclick="contentEditable=true;"
+                         onblur="contentEditable=false;" contenteditable="false">
+                        Baba
+                    </div>
+                </div>
                 <div class="settings-control">
                     <div class="settings"></div>
                     <div class="move-buttons">
@@ -81,7 +91,12 @@
                 <div class="label-holder" style="background-color: rgb(255,255,127)" contenteditable="true">
                     <span class="label">C</span>
                 </div>
-                <div class="tier-sort"></div>
+                <div class="tier-sort">
+                    <div class="object" ondblclick="contentEditable=true;"
+                         onblur="contentEditable=false;" contenteditable="false">
+                        CssCss
+                    </div>
+                </div>
                 <div class="settings-control">
                     <div class="settings"></div>
                     <div class="move-buttons">
@@ -94,7 +109,12 @@
                 <div class="label-holder" style="background-color: rgb(191, 255, 127);" contenteditable="true">
                     <span class="label">D</span>
                 </div>
-                <div class="tier-sort"></div>
+                <div class="tier-sort">
+                    <div class="object" ondblclick="contentEditable=true;"
+                         onblur="contentEditable=false;" contenteditable="false">
+                        DzNuts
+                    </div>
+                </div>
                 <div class="settings-control">
                     <div class="settings"></div>
                     <div class="move-buttons">
@@ -146,8 +166,6 @@
                     Save TierList
                 </button>
             </div>
-
-
             <div id="overlay" style="opacity: 0; visibility: hidden;">
                 <div id="modal-wrapper">
                     <div id="modal" style="display: none;">
@@ -193,7 +211,9 @@
 <script defer>
     const container1 = document.querySelector('#object-carousel');
     const tiers = document.querySelectorAll(`.tier-sort`)
-    let drake = dragula([]).on('drop', function (el) {
+    let drake = dragula([], {
+        removeOnSpill: true
+    }).on('drop', function (el) {
         saveLocal()
     })
     for (let i = 0; i < tiers.length; i++) {
