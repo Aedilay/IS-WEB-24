@@ -12,8 +12,8 @@
     <link rel="stylesheet" href="style/index.css">
     <link rel="stylesheet" href="style/overlay.css">
     <title>TierListMaker</title>
-    <script src="scripts/header_loader.js" defer></script>
-    <script src="scripts/footer_loader.js" defer></script>
+    <script src="scripts/header_loader.js"></script>
+    <script src="scripts/footer_loader.js"></script>
     <script src="scripts/timer.js"></script>
     <script src="scripts/active_menu.js" defer></script>
     <script src="scripts/show_overlay.js" defer></script>
@@ -214,7 +214,9 @@
     let drake = dragula([], {
         removeOnSpill: true
     }).on('drop', function (el) {
-        saveLocal()
+        setTimeout(function() {
+            saveLocal()
+        }, 10)
     })
     for (let i = 0; i < tiers.length; i++) {
         drake.containers.push(tiers.item(i))
